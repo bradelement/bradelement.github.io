@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="直接编译报错，缺少openssl，简单记录下：
-./configure \  –with-cc-opt=”-I/usr/local/opt/openssl/include/ -I/usr/local/opt/pcre/include/“ \  –with-ld-opt=”-L/usr/local/opt/openssl/lib/ -L/usr/local/opt/pcre/lib/“ \">
+<meta name="description" content="直接编译openresty报错，缺少openssl，简单记录下：
+123./configure \  --with-cc-opt=&quot;-I /usr/local/opt/openssl/include/ -I /usr/local/opt/pcre/include/&quot; \  --with-ld-opt=&quot;-L /usr/local/opt/openssl/lib/ -L /usr/local/opt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac下编辑openresty">
+<meta property="og:title" content="mac下编译openresty">
 <meta property="og:url" content="http://bradelement.github.io/2016/02/01/openresty/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="直接编译报错，缺少openssl，简单记录下：
-./configure \  –with-cc-opt=”-I/usr/local/opt/openssl/include/ -I/usr/local/opt/pcre/include/“ \  –with-ld-opt=”-L/usr/local/opt/openssl/lib/ -L/usr/local/opt/pcre/lib/“ \">
-<meta property="og:updated_time" content="2016-02-01T05:49:22.000Z">
+<meta property="og:description" content="直接编译openresty报错，缺少openssl，简单记录下：
+123./configure \  --with-cc-opt=&quot;-I /usr/local/opt/openssl/include/ -I /usr/local/opt/pcre/include/&quot; \  --with-ld-opt=&quot;-L /usr/local/opt/openssl/lib/ -L /usr/local/opt">
+<meta property="og:updated_time" content="2016-02-01T16:03:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac下编辑openresty">
-<meta name="twitter:description" content="直接编译报错，缺少openssl，简单记录下：
-./configure \  –with-cc-opt=”-I/usr/local/opt/openssl/include/ -I/usr/local/opt/pcre/include/“ \  –with-ld-opt=”-L/usr/local/opt/openssl/lib/ -L/usr/local/opt/pcre/lib/“ \">
+<meta name="twitter:title" content="mac下编译openresty">
+<meta name="twitter:description" content="直接编译openresty报错，缺少openssl，简单记录下：
+123./configure \  --with-cc-opt=&quot;-I /usr/local/opt/openssl/include/ -I /usr/local/opt/pcre/include/&quot; \  --with-ld-opt=&quot;-L /usr/local/opt/openssl/lib/ -L /usr/local/opt">
 
 
 
@@ -87,7 +87,7 @@
   };
 </script>
 
-  <title> mac下编辑openresty | element </title>
+  <title> mac下编译openresty | element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -217,7 +217,7 @@
             
             
               
-                mac下编辑openresty
+                mac下编译openresty
               
             
           </h1>
@@ -281,8 +281,13 @@
       
 
       
-        <p>直接编译报错，缺少openssl，简单记录下：</p>
-<p>./configure \<br>  –with-cc-opt=”-I/usr/local/opt/openssl/include/ -I/usr/local/opt/pcre/include/“ \<br>  –with-ld-opt=”-L/usr/local/opt/openssl/lib/ -L/usr/local/opt/pcre/lib/“ \</p>
+        <p>直接编译openresty报错，缺少openssl，简单记录下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/configure \</span><br><span class="line">  --with-cc-opt="-I /u</span>sr<span class="regexp">/local/</span>opt<span class="regexp">/openssl/i</span>nclude<span class="regexp">/ -I /u</span>sr<span class="regexp">/local/</span>opt<span class="regexp">/pcre/i</span>nclude<span class="regexp">/" \</span><br><span class="line">  --with-ld-opt="-L /u</span>sr<span class="regexp">/local/</span>opt<span class="regexp">/openssl/</span>lib<span class="regexp">/ -L /u</span>sr<span class="regexp">/local/</span>opt<span class="regexp">/pcre/</span>lib<span class="regexp">/" \</span></span><br></pre></td></tr></table></figure>
+<p>brew有一个link的命令。<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>link <span class="keyword">blabla</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>/usr/local/opt</li>
+<li>/usr/local/Cellar</li>
+</ul>
 
       
     </div>
@@ -335,7 +340,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/02/01/openresty/"
-           data-title="mac下编辑openresty" data-url="http://bradelement.github.io/2016/02/01/openresty/">
+           data-title="mac下编译openresty" data-url="http://bradelement.github.io/2016/02/01/openresty/">
       </div>
     
   </div>
