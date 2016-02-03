@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="vagrant:1234vagrant init ubuntu/trusty64vagrant upvagrant package --不打包貌似会丢安装好的东西
-docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key add -wget -qO- https://get.docker.com/ | sh">
+<meta name="description" content="vagrant:12345vagrant init ubuntu/trusty64vagrant upvagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrantvagrant package --不打包貌似会丢安装好的东西
+docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vagrant/docker安装小结">
 <meta property="og:url" content="http://bradelement.github.io/2016/02/03/vagrant/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="vagrant:1234vagrant init ubuntu/trusty64vagrant upvagrant package --不打包貌似会丢安装好的东西
-docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key add -wget -qO- https://get.docker.com/ | sh">
-<meta property="og:updated_time" content="2016-02-03T14:00:26.000Z">
+<meta property="og:description" content="vagrant:12345vagrant init ubuntu/trusty64vagrant upvagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrantvagrant package --不打包貌似会丢安装好的东西
+docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
+<meta property="og:updated_time" content="2016-02-03T14:09:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant/docker安装小结">
-<meta name="twitter:description" content="vagrant:1234vagrant init ubuntu/trusty64vagrant upvagrant package --不打包貌似会丢安装好的东西
-docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key add -wget -qO- https://get.docker.com/ | sh">
+<meta name="twitter:description" content="vagrant:12345vagrant init ubuntu/trusty64vagrant upvagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrantvagrant package --不打包貌似会丢安装好的东西
+docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
 
 
 
@@ -281,7 +281,7 @@ docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key add -wget -qO- http
       
 
       
-        <p>vagrant:<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vagrant init ubuntu/trusty64</span><br><span class="line">vagrant up</span><br><span class="line"></span><br><span class="line">vagrant <span class="built_in">package</span> <span class="comment">--不打包貌似会丢安装好的东西</span></span><br></pre></td></tr></table></figure></p>
+        <p>vagrant:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vagrant init ubuntu/trusty64</span><br><span class="line">vagrant up</span><br><span class="line"></span><br><span class="line">vagrant ssh --貌似等价于ssh <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">2222</span> 用户名/密码都是vagrant</span><br><span class="line">vagrant package --不打包貌似会丢安装好的东西</span><br></pre></td></tr></table></figure></p>
 <p>docker:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/gpg | sudo apt-key <span class="built_in">add</span> -</span><br><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
 
       
