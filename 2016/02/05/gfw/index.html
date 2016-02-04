@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hello," />
+  <meta name="keywords" content="proxychains,shadowsocks," />
 
 
 
@@ -57,19 +57,22 @@
 
 
 
-<meta name="description" content="最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。
-新年一过自己又长了一岁，以">
+<meta name="description" content="之前一直使用lantern，浏览器上网无压力，wget/git等仍然被和谐。最近被介绍了shadowsocks和proxychains两大神器，简单记录下。
+shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。gui版直接输入服务器端用户名，密码，加密方式等即可。
+proxychains主要用来做console里的socks5代理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="element.gift上线~">
-<meta property="og:url" content="http://bradelement.github.io/2016/01/30/hello/index.html">
+<meta property="og:title" content="翻越伟大的gfw">
+<meta property="og:url" content="http://bradelement.github.io/2016/02/05/gfw/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。
-新年一过自己又长了一岁，以">
-<meta property="og:updated_time" content="2016-01-31T13:41:26.000Z">
+<meta property="og:description" content="之前一直使用lantern，浏览器上网无压力，wget/git等仍然被和谐。最近被介绍了shadowsocks和proxychains两大神器，简单记录下。
+shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。gui版直接输入服务器端用户名，密码，加密方式等即可。
+proxychains主要用来做console里的socks5代理。">
+<meta property="og:updated_time" content="2016-02-04T17:45:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="element.gift上线~">
-<meta name="twitter:description" content="最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。
-新年一过自己又长了一岁，以">
+<meta name="twitter:title" content="翻越伟大的gfw">
+<meta name="twitter:description" content="之前一直使用lantern，浏览器上网无压力，wget/git等仍然被和谐。最近被介绍了shadowsocks和proxychains两大神器，简单记录下。
+shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。gui版直接输入服务器端用户名，密码，加密方式等即可。
+proxychains主要用来做console里的socks5代理。">
 
 
 
@@ -87,7 +90,7 @@
   };
 </script>
 
-  <title> element.gift上线~ | element </title>
+  <title> 翻越伟大的gfw | element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -217,7 +220,7 @@
             
             
               
-                element.gift上线~
+                翻越伟大的gfw
               
             
           </h1>
@@ -229,8 +232,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-01-30T23:17:00+08:00" content="2016-01-30">
-              2016-01-30
+            <time itemprop="dateCreated" datetime="2016-02-05T00:55:01+08:00" content="2016-02-05">
+              2016-02-05
             </time>
           </span>
 
@@ -243,8 +246,8 @@
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/default/" itemprop="url" rel="index">
-                    <span itemprop="name">default</span>
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
                   </a>
                 </span>
 
@@ -259,8 +262,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/30/hello/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/30/hello/" itemprop="commentsCount"></span>
+                <a href="/2016/02/05/gfw/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/05/gfw/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -281,16 +284,16 @@
       
 
       
-        <p>最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。</p>
-<p>新年一过自己又长了一岁，以前发生的许多事仍历历在目，但是仔细想想貌似也是几年前的事情了。每年感觉还是有一些成长，但更多的还是焦虑、迷茫。不停地在追，却发现有时找不到相对正确的方向。可能是每个人都会经历的一段吧，希望今后还是能把自己能控制的都做好，不留遗憾，应该就是很高的境界了吧。</p>
-<p>新一年开始希望能好好学习下技术，把基础打得更扎实一点，暂定每周至少完成一篇文章吧。学习的算法，工具，架构等等，实在不行计划把桥牌也重新捡起来，每周分析一篇BM2000的坐庄。。。也算是补充内容吧。（面试*家的时候三面leader要求教他一样东西，很自然地把桥牌教了一遍，对这段面试确实有很深的印象，最终还是略微可惜，向来缘浅..?）</p>
-<blockquote>
-<p>it’s easy, let it go~ 其实我只是想看看markdown里引用长啥样…</p>
-</blockquote>
-<p>顺对以下英文表示感谢，排名不分先后。 ezb, feelvoice, alva… 经历的每一件事都能学到不少东西~</p>
-<p>to be continued…</p>
-<p>element</p>
-
+        <p>之前一直使用<a href="https://github.com/getlantern/lantern/" target="_blank" rel="external">lantern</a>，浏览器上网无压力，wget/git等仍然被和谐。<br>最近被介绍了shadowsocks和proxychains两大神器，简单记录下。</p>
+<p>shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。<br>gui版直接输入服务器端用户名，密码，加密方式等即可。</p>
+<p>proxychains主要用来做console里的socks5代理。</p>
+<pre><code>brew install proxychains-ng
+</code></pre><p>理论上直接brew安装即可，修改配置文件，增加socks5 ip port配置即可。</p>
+<pre><code>proxychains4 curl www.youtube.com
+</code></pre><p>可惜在我的小mac上不能成功。<br>查阅资料后，目前结论是mac自带的curl, git版本太低，不支持proxychains，brew install curl/git即可。<br>安装后curl不能覆盖原curl(求教各位大神如何覆盖系统自带的curl…) git亲测可行… 以后有新发现再行补充~</p>
+<pre><code>proxychains4 wget www.youtube.com
+proxychains4 git clone blabla
+</code></pre>
       
     </div>
 
@@ -298,7 +301,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hello/" rel="tag">#hello</a>
+            <a href="/tags/proxychains/" rel="tag">#proxychains</a>
+          
+            <a href="/tags/shadowsocks/" rel="tag">#shadowsocks</a>
           
         </div>
       
@@ -307,13 +312,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/02/03/vagrant/" rel="next" title="vagrant/docker安装小结">
+                <i class="fa fa-chevron-left"></i> vagrant/docker安装小结
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/01/openresty/" rel="prev" title="mac下编译openresty">
-                mac下编译openresty <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -339,8 +344,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/30/hello/"
-           data-title="element.gift上线~" data-url="http://bradelement.github.io/2016/01/30/hello/">
+      <div class="ds-thread" data-thread-key="2016/02/05/gfw/"
+           data-title="翻越伟大的gfw" data-url="http://bradelement.github.io/2016/02/05/gfw/">
       </div>
     
   </div>

@@ -57,19 +57,37 @@
 
 
 
-<meta name="description" content="vagrant:12345vagrant init ubuntu/trusty64vagrant upvagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrantvagrant package --不打包貌似会丢安装好的东西
-docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
+<meta name="description" content="vagrant:
+vagrant init ubuntu/trusty64
+vagrant up
+
+vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
+vagrant package --不打包貌似会丢安装好的东西
+docker:
+wget -qO- https://get.docker.com/gpg | sudo apt-key a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vagrant/docker安装小结">
 <meta property="og:url" content="http://bradelement.github.io/2016/02/03/vagrant/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="vagrant:12345vagrant init ubuntu/trusty64vagrant upvagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrantvagrant package --不打包貌似会丢安装好的东西
-docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
-<meta property="og:updated_time" content="2016-02-03T14:09:04.000Z">
+<meta property="og:description" content="vagrant:
+vagrant init ubuntu/trusty64
+vagrant up
+
+vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
+vagrant package --不打包貌似会丢安装好的东西
+docker:
+wget -qO- https://get.docker.com/gpg | sudo apt-key a">
+<meta property="og:updated_time" content="2016-02-04T17:26:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant/docker安装小结">
-<meta name="twitter:description" content="vagrant:12345vagrant init ubuntu/trusty64vagrant upvagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrantvagrant package --不打包貌似会丢安装好的东西
-docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
+<meta name="twitter:description" content="vagrant:
+vagrant init ubuntu/trusty64
+vagrant up
+
+vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
+vagrant package --不打包貌似会丢安装好的东西
+docker:
+wget -qO- https://get.docker.com/gpg | sudo apt-key a">
 
 
 
@@ -281,9 +299,16 @@ docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
       
 
       
-        <p>vagrant:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vagrant init ubuntu/trusty64</span><br><span class="line">vagrant up</span><br><span class="line"></span><br><span class="line">vagrant ssh --貌似等价于ssh <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">2222</span> 用户名/密码都是vagrant</span><br><span class="line">vagrant package --不打包貌似会丢安装好的东西</span><br></pre></td></tr></table></figure></p>
-<p>docker:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/gpg | sudo apt-key <span class="built_in">add</span> -</span><br><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
+        <p>vagrant:</p>
+<pre><code>vagrant init ubuntu/trusty64
+vagrant up
 
+vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
+vagrant package --不打包貌似会丢安装好的东西
+</code></pre><p>docker:</p>
+<pre><code>wget -qO- https://get.docker.com/gpg | sudo apt-key add -
+wget -qO- https://get.docker.com/ | sh
+</code></pre>
       
     </div>
 
@@ -309,6 +334,10 @@ docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/05/gfw/" rel="prev" title="翻越伟大的gfw">
+                翻越伟大的gfw <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -380,7 +409,7 @@ docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -397,7 +426,7 @@ docker:12wget -qO- https://get.docker.com/gpg | sudo apt-key">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>

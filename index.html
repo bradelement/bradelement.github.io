@@ -199,15 +199,124 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/05/gfw/" itemprop="url">
+                  翻越伟大的gfw
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-02-05T00:55:01+08:00" content="2016-02-05">
+              2016-02-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/05/gfw/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/05/gfw/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        
-        
-        
       
 
       
-    
+        
+          
+            <p>之前一直使用<a href="https://github.com/getlantern/lantern/" target="_blank" rel="external">lantern</a>，浏览器上网无压力，wget/git等仍然被和谐。<br>最近被介绍了shadowsocks和proxychains两大神器，简单记录下。</p>
+<p>shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。<br>gui版直接输入服务器端用户名，密码，加密方式等即可。</p>
+<p>proxychains主要用来做console里的socks5代理。</p>
+<pre><code>brew install proxychains-ng
+</code></pre><p>理论上直接brew安装即可，修改配置文件，增加socks5 ip port配置即可。</p>
+<pre><code>proxychains4 curl www.youtube.com
+</code></pre><p>可惜在我的小mac上不能成功。<br>查阅资料后，目前结论是mac自带的curl, git版本太低，不支持proxychains，brew install curl/git即可。<br>安装后curl不能覆盖原curl(求教各位大神如何覆盖系统自带的curl…) git亲测可行… 以后有新发现再行补充~</p>
+<pre><code>proxychains4 wget www.youtube.com
+proxychains4 git clone blabla
+</code></pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -299,8 +408,252 @@
       
         
           
-            <p>vagrant:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vagrant init ubuntu/trusty64</span><br><span class="line">vagrant up</span><br><span class="line"></span><br><span class="line">vagrant ssh --貌似等价于ssh <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">2222</span> 用户名/密码都是vagrant</span><br><span class="line">vagrant package --不打包貌似会丢安装好的东西</span><br></pre></td></tr></table></figure></p>
-<p>docker:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/gpg | sudo apt-key <span class="built_in">add</span> -</span><br><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
+            <p>vagrant:</p>
+<pre><code>vagrant init ubuntu/trusty64
+vagrant up
+
+vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
+vagrant package --不打包貌似会丢安装好的东西
+</code></pre><p>docker:</p>
+<pre><code>wget -qO- https://get.docker.com/gpg | sudo apt-key add -
+wget -qO- https://get.docker.com/ | sh
+</code></pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/01/openresty/" itemprop="url">
+                  mac下编译openresty
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-02-01T13:46:31+08:00" content="2016-02-01">
+              2016-02-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/01/openresty/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/openresty/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>直接编译openresty报错，缺少openssl，简单记录下：</p>
+<pre><code>./configure \
+  --with-cc-opt=&quot;-I /usr/local/opt/openssl/include/ -I /usr/local/opt/pcre/include/&quot; \
+  --with-ld-opt=&quot;-L /usr/local/opt/openssl/lib/ -L /usr/local/opt/pcre/lib/&quot;
+</code></pre><p>brew有一个link的命令。</p>
+<pre><code>brew link blabla
+</code></pre><ul>
+<li>/usr/local/opt</li>
+<li>/usr/local/Cellar</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/30/hello/" itemprop="url">
+                  element.gift上线~
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-01-30T23:17:00+08:00" content="2016-01-30">
+              2016-01-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/default/" itemprop="url" rel="index">
+                    <span itemprop="name">default</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/30/hello/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/30/hello/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。</p>
+<p>新年一过自己又长了一岁，以前发生的许多事仍历历在目，但是仔细想想貌似也是几年前的事情了。每年感觉还是有一些成长，但更多的还是焦虑、迷茫。不停地在追，却发现有时找不到相对正确的方向。可能是每个人都会经历的一段吧，希望今后还是能把自己能控制的都做好，不留遗憾，应该就是很高的境界了吧。</p>
+<p>新一年开始希望能好好学习下技术，把基础打得更扎实一点，暂定每周至少完成一篇文章吧。学习的算法，工具，架构等等，实在不行计划把桥牌也重新捡起来，每周分析一篇BM2000的坐庄。。。也算是补充内容吧。（面试*家的时候三面leader要求教他一样东西，很自然地把桥牌教了一遍，对这段面试确实有很深的印象，最终还是略微可惜，向来缘浅..?）</p>
+<blockquote>
+<p>it’s easy, let it go~ 其实我只是想看看markdown里引用长啥样…</p>
+</blockquote>
+<p>顺对以下英文表示感谢，排名不分先后。 ezb, feelvoice, alva… 经历的每一件事都能学到不少东西~</p>
+<p>to be continued…</p>
+<p>element</p>
 
           
         
@@ -363,7 +716,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -380,7 +733,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
