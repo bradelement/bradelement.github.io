@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="proxychains,shadowsocks," />
+  <meta name="keywords" content="rabbitmq," />
 
 
 
@@ -57,22 +57,25 @@
 
 
 
-<meta name="description" content="之前一直使用lantern，浏览器上网无压力，wget/git等仍然被和谐。最近被介绍了shadowsocks和proxychains两大神器，简单记录下。
-shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。gui版直接输入服务器端用户名，密码，加密方式等即可。
-proxychains主要用来做console里的socks5代理。">
+<meta name="description" content="线上要安装个rabbitmq，本机简单搭建并记录一下。
+brew install rabbitmq
+/usr/local/sbin/rabbitmq-server #可以加到path里
+有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="翻越伟大的gfw">
-<meta property="og:url" content="http://bradelement.github.io/2016/02/05/gfw/index.html">
+<meta property="og:title" content="rabbitmq笔记">
+<meta property="og:url" content="http://bradelement.github.io/2016/02/14/rabbitmq/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="之前一直使用lantern，浏览器上网无压力，wget/git等仍然被和谐。最近被介绍了shadowsocks和proxychains两大神器，简单记录下。
-shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。gui版直接输入服务器端用户名，密码，加密方式等即可。
-proxychains主要用来做console里的socks5代理。">
-<meta property="og:updated_time" content="2016-02-14T12:52:56.000Z">
+<meta property="og:description" content="线上要安装个rabbitmq，本机简单搭建并记录一下。
+brew install rabbitmq
+/usr/local/sbin/rabbitmq-server #可以加到path里
+有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html">
+<meta property="og:updated_time" content="2016-02-14T14:05:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="翻越伟大的gfw">
-<meta name="twitter:description" content="之前一直使用lantern，浏览器上网无压力，wget/git等仍然被和谐。最近被介绍了shadowsocks和proxychains两大神器，简单记录下。
-shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。gui版直接输入服务器端用户名，密码，加密方式等即可。
-proxychains主要用来做console里的socks5代理。">
+<meta name="twitter:title" content="rabbitmq笔记">
+<meta name="twitter:description" content="线上要安装个rabbitmq，本机简单搭建并记录一下。
+brew install rabbitmq
+/usr/local/sbin/rabbitmq-server #可以加到path里
+有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html">
 
 
 
@@ -90,7 +93,7 @@ proxychains主要用来做console里的socks5代理。">
   };
 </script>
 
-  <title> 翻越伟大的gfw | element </title>
+  <title> rabbitmq笔记 | element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -220,7 +223,7 @@ proxychains主要用来做console里的socks5代理。">
             
             
               
-                翻越伟大的gfw
+                rabbitmq笔记
               
             
           </h1>
@@ -232,8 +235,8 @@ proxychains主要用来做console里的socks5代理。">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-02-05T00:55:01+08:00" content="2016-02-05">
-              2016-02-05
+            <time itemprop="dateCreated" datetime="2016-02-14T20:40:53+08:00" content="2016-02-14">
+              2016-02-14
             </time>
           </span>
 
@@ -262,8 +265,8 @@ proxychains主要用来做console里的socks5代理。">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/05/gfw/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/05/gfw/" itemprop="commentsCount"></span>
+                <a href="/2016/02/14/rabbitmq/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/14/rabbitmq/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -284,16 +287,11 @@ proxychains主要用来做console里的socks5代理。">
       
 
       
-        <p>之前一直使用<a href="https://github.com/getlantern/lantern/" target="_blank" rel="external">lantern</a>，浏览器上网无压力，wget/git等仍然被和谐。<br>最近被介绍了shadowsocks和proxychains两大神器，简单记录下。</p>
-<p>shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。<br>gui版直接输入服务器端用户名，密码，加密方式等即可。</p>
-<p>proxychains主要用来做console里的socks5代理。</p>
-<pre><code>brew install proxychains-ng
-</code></pre><p>理论上直接brew安装即可，修改配置文件，增加socks5 ip port配置即可。</p>
-<pre><code>proxychains4 curl www.youtube.com
-</code></pre><p>可惜在我的小mac上不能成功。<br>查阅资料后，目前结论是mac自带的curl, git版本太低，不支持proxychains，brew install curl/git即可。<br>安装后curl不能覆盖原curl(求教各位大神如何覆盖系统自带的curl…) git亲测可行… 以后有新发现再行补充~</p>
-<pre><code>proxychains4 wget www.youtube.com
-proxychains4 git clone blabla
-</code></pre>
+        <p>线上要安装个rabbitmq，本机简单搭建并记录一下。</p>
+<pre><code>brew install rabbitmq
+/usr/local/sbin/rabbitmq-server #可以加到path里
+</code></pre><p>有教程，可参考具体代码<br><a href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="external">https://www.rabbitmq.com/getstarted.html</a></p>
+
       
     </div>
 
@@ -301,9 +299,7 @@ proxychains4 git clone blabla
       
         <div class="post-tags">
           
-            <a href="/tags/proxychains/" rel="tag">#proxychains</a>
-          
-            <a href="/tags/shadowsocks/" rel="tag">#shadowsocks</a>
+            <a href="/tags/rabbitmq/" rel="tag">#rabbitmq</a>
           
         </div>
       
@@ -312,17 +308,13 @@ proxychains4 git clone blabla
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/03/vagrant/" rel="next" title="vagrant/docker安装小结">
-                <i class="fa fa-chevron-left"></i> vagrant/docker安装小结
+              <a href="/2016/02/05/gfw/" rel="next" title="翻越伟大的gfw">
+                <i class="fa fa-chevron-left"></i> 翻越伟大的gfw
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/14/rabbitmq/" rel="prev" title="rabbitmq笔记">
-                rabbitmq笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -348,8 +340,8 @@ proxychains4 git clone blabla
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/05/gfw/"
-           data-title="翻越伟大的gfw" data-url="http://bradelement.github.io/2016/02/05/gfw/">
+      <div class="ds-thread" data-thread-key="2016/02/14/rabbitmq/"
+           data-title="rabbitmq笔记" data-url="http://bradelement.github.io/2016/02/14/rabbitmq/">
       </div>
     
   </div>
