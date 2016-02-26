@@ -60,7 +60,9 @@
 <meta name="description" content="线上要安装个rabbitmq，本机简单搭建并记录一下。
 brew install rabbitmq
 /usr/local/sbin/rabbitmq-server #可以加到path里
-有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html">
+有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html
+rabbitmqctl add_user username password
+rabbitmqctl set_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rabbitmq笔记">
 <meta property="og:url" content="http://bradelement.github.io/2016/02/14/rabbitmq/index.html">
@@ -68,14 +70,18 @@ brew install rabbitmq
 <meta property="og:description" content="线上要安装个rabbitmq，本机简单搭建并记录一下。
 brew install rabbitmq
 /usr/local/sbin/rabbitmq-server #可以加到path里
-有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html">
-<meta property="og:updated_time" content="2016-02-14T14:05:11.000Z">
+有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html
+rabbitmqctl add_user username password
+rabbitmqctl set_">
+<meta property="og:updated_time" content="2016-02-26T14:06:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rabbitmq笔记">
 <meta name="twitter:description" content="线上要安装个rabbitmq，本机简单搭建并记录一下。
 brew install rabbitmq
 /usr/local/sbin/rabbitmq-server #可以加到path里
-有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html">
+有教程，可参考具体代码https://www.rabbitmq.com/getstarted.html
+rabbitmqctl add_user username password
+rabbitmqctl set_">
 
 
 
@@ -291,7 +297,17 @@ brew install rabbitmq
 <pre><code>brew install rabbitmq
 /usr/local/sbin/rabbitmq-server #可以加到path里
 </code></pre><p>有教程，可参考具体代码<br><a href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="external">https://www.rabbitmq.com/getstarted.html</a></p>
+<pre><code>rabbitmqctl add_user username password
+rabbitmqctl set_user_tags username none/management/policymaker/monitoring/administrator
+rabbitmqctl list_users
 
+rabbitmqctl add_vhost hostname
+rabbitmqctl list_vhosts
+
+rabbitmqctl set_permissions  -p /hostname username &apos;.*&apos; &apos;.*&apos; &apos;.*&apos;
+rabbitmqctl list_permissions -p /hostname
+rabbitmqctl list_user_permissions username
+</code></pre>
       
     </div>
 
