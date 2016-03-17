@@ -250,8 +250,8 @@
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/default/" itemprop="url" rel="index">
-                    <span itemprop="name">default</span>
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
                   </a>
                 </span>
 
@@ -290,8 +290,24 @@
       
         
           
-            <p>前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">salt \* <span class="keyword">test</span>.ping</span><br><span class="line">salt -<span class="keyword">E</span> '.*151' cmd.<span class="keyword">run</span> <span class="string">"ls -al /etc"</span>  <span class="comment">//正则</span></span><br><span class="line">salt -<span class="keyword">L</span> vm10-65-128-217 disk.usage <span class="comment">//列表</span></span><br><span class="line">salt -<span class="keyword">G</span> 'os:CentOS' grains.items <span class="comment">//grains</span></span><br><span class="line">salt -<span class="keyword">N</span> nginx sys.doc grains <span class="comment">//分组</span></span><br><span class="line">salt -I 'key:value' sys.state_doc <span class="keyword">file</span> <span class="comment">//pillar</span></span><br><span class="line"></span><br><span class="line">salt \* sys.list_modules</span><br><span class="line">salt \* sys.list_functions cmd</span><br><span class="line"></span><br><span class="line">salt \* sys.list_state_modules</span><br><span class="line">salt \* sys.list_state_functions <span class="keyword">file</span></span><br><span class="line">salt \* sys.state_doc <span class="keyword">file</span>.managed</span><br><span class="line"></span><br><span class="line">salt \* state.sls formula</span><br><span class="line">salt \* state.highstate <span class="keyword">test</span>=True</span><br></pre></td></tr></table></figure></p>
+            <p>前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）</p>
+<pre><code>salt \* test.ping
+salt -E &apos;.*151&apos; cmd.run &quot;ls -al /etc&quot;  //正则
+salt -L vm10-65-128-217 disk.usage //列表
+salt -G &apos;os:CentOS&apos; grains.items //grains
+salt -N nginx sys.doc grains //分组
+salt -I &apos;key:value&apos; sys.state_doc file //pillar
 
+salt \* sys.list_modules
+salt \* sys.list_functions cmd
+
+salt \* sys.list_state_modules
+salt \* sys.list_state_functions file
+salt \* sys.state_doc file.managed
+
+salt \* state.sls formula
+salt \* state.highstate test=True
+</code></pre>
           
         
       
