@@ -222,6 +222,116 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/17/saltstack/" itemprop="url">
+                  saltstack
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T11:26:13+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/default/" itemprop="url" rel="index">
+                    <span itemprop="name">default</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/17/saltstack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/saltstack/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">salt \* <span class="keyword">test</span>.ping</span><br><span class="line">salt -<span class="keyword">E</span> '.*151' cmd.<span class="keyword">run</span> <span class="string">"ls -al /etc"</span>  <span class="comment">//正则</span></span><br><span class="line">salt -<span class="keyword">L</span> vm10-65-128-217.ksc.com disk.usage <span class="comment">//列表</span></span><br><span class="line">salt -<span class="keyword">G</span> 'os:CentOS' grains.items <span class="comment">//grains</span></span><br><span class="line">salt -<span class="keyword">N</span> nginx sys.doc grains <span class="comment">//分组</span></span><br><span class="line">salt -I 'key:value' sys.state_doc <span class="keyword">file</span> <span class="comment">//pillar</span></span><br><span class="line"></span><br><span class="line">salt \* sys.list_modules</span><br><span class="line">salt \* sys.list_functions cmd</span><br><span class="line"></span><br><span class="line">salt \* sys.list_state_modules</span><br><span class="line">salt \* sys.list_state_functions <span class="keyword">file</span></span><br><span class="line">salt \* sys.state_doc <span class="keyword">file</span>.managed</span><br><span class="line"></span><br><span class="line">salt \* state.sls formula</span><br><span class="line">salt \* state.highstate <span class="keyword">test</span>=True</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/14/rabbitmq/" itemprop="url">
                   rabbitmq笔记
                 </a>
@@ -839,7 +949,7 @@ wget -qO- https://get.docker.com/ | sh
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -856,7 +966,7 @@ wget -qO- https://get.docker.com/ | sh
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
