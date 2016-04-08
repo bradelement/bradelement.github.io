@@ -1,0 +1,826 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="markdown-it," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Advertisement 😃
+
+pica - high quality and fast image
+resize in browser.
+babelfish - developer friendly
+i18n with plurals support and easy syntax.
+
+You will like those projects!
+
+h1 Heading 😎
+¶h2 Head">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown-it">
+<meta property="og:url" content="http://bradelement.github.io/2016/04/08/markdown-it/index.html">
+<meta property="og:site_name" content="element">
+<meta property="og:description" content="Advertisement 😃
+
+pica - high quality and fast image
+resize in browser.
+babelfish - developer friendly
+i18n with plurals support and easy syntax.
+
+You will like those projects!
+
+h1 Heading 😎
+¶h2 Head">
+<meta property="og:image" content="https://octodex.github.com/images/minion.png">
+<meta property="og:image" content="https://octodex.github.com/images/stormtroopocat.jpg">
+<meta property="og:image" content="https://octodex.github.com/images/dojocat.jpg">
+<meta property="og:updated_time" content="2016-04-08T11:20:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="markdown-it">
+<meta name="twitter:description" content="Advertisement 😃
+
+pica - high quality and fast image
+resize in browser.
+babelfish - developer friendly
+i18n with plurals support and easy syntax.
+
+You will like those projects!
+
+h1 Heading 😎
+¶h2 Head">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> markdown-it | element </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">element</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                markdown-it
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-08T19:18:26+08:00" content="2016-04-08">
+              2016-04-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/misc/" itemprop="url" rel="index">
+                    <span itemprop="name">misc</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/08/markdown-it/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/markdown-it/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p><strong>Advertisement 😃</strong></p>
+<ul>
+<li><strong><a href="https://nodeca.github.io/pica/demo/" target="_blank" rel="external">pica</a></strong> - high quality and fast image<br>
+resize in browser.</li>
+<li><strong><a href="https://github.com/nodeca/babelfish/" target="_blank" rel="external">babelfish</a></strong> - developer friendly<br>
+i18n with plurals support and easy syntax.</li>
+</ul>
+<p>You will like those projects!</p>
+<hr>
+<h1>h1 Heading 😎</h1>
+<h2 id="h2-heading"><a class="header-anchor" href="#h2-heading">¶</a>h2 Heading</h2>
+<h3 id="h3-heading"><a class="header-anchor" href="#h3-heading">¶</a>h3 Heading</h3>
+<h4 id="h4-heading"><a class="header-anchor" href="#h4-heading">¶</a>h4 Heading</h4>
+<h5 id="h5-heading"><a class="header-anchor" href="#h5-heading">¶</a>h5 Heading</h5>
+<h6 id="h6-heading"><a class="header-anchor" href="#h6-heading">¶</a>h6 Heading</h6>
+<h2 id="horizontal-rules"><a class="header-anchor" href="#horizontal-rules">¶</a>Horizontal Rules</h2>
+<hr>
+<hr>
+<hr>
+<h2 id="typographic-replacements"><a class="header-anchor" href="#typographic-replacements">¶</a>Typographic replacements</h2>
+<p>Enable typographer option to see result.</p>
+<p>© © ® ® ™ ™ § § ±</p>
+<p>test… test… test… test?.. test!..</p>
+<p>!!! ??? ,  – —</p>
+<p>“Smartypants, double quotes” and ‘single quotes’</p>
+<h2 id="emphasis"><a class="header-anchor" href="#emphasis">¶</a>Emphasis</h2>
+<p><strong>This is bold text</strong></p>
+<p><strong>This is bold text</strong></p>
+<p><em>This is italic text</em></p>
+<p><em>This is italic text</em></p>
+<p><s>Strikethrough</s></p>
+<h2 id="blockquotes"><a class="header-anchor" href="#blockquotes">¶</a>Blockquotes</h2>
+<blockquote>
+<p>Blockquotes can also be nested…</p>
+<blockquote>
+<p>…by using additional greater-than signs right next to each other…</p>
+<blockquote>
+<p>…or with spaces between arrows.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="lists"><a class="header-anchor" href="#lists">¶</a>Lists</h2>
+<p>Unordered</p>
+<ul>
+<li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
+<li>Sub-lists are made by indenting 2 spaces:
+<ul>
+<li>Marker character change forces new list start:
+<ul>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+<ul>
+<li>Facilisis in pretium nisl aliquet</li>
+</ul>
+<ul>
+<li>Nulla volutpat aliquam velit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Very easy!</li>
+</ul>
+<p>Ordered</p>
+<ol>
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+</ol>
+<ol>
+<li>You can use sequential numbers…</li>
+<li>…or keep all the numbers as <code>1.</code></li>
+</ol>
+<p>Start numbering with offset:</p>
+<ol start="57">
+<li>foo</li>
+<li>bar</li>
+</ol>
+<h2 id="code"><a class="header-anchor" href="#code">¶</a>Code</h2>
+<p>Inline <code>code</code></p>
+<p>Indented code</p>
+<pre><code>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+</code></pre>
+<p>Block code “fences”</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sample <span class="type">text</span> here...</span><br></pre></td></tr></table></figure>
+<p>Syntax highlighting</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> bar++;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo(<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="tables"><a class="header-anchor" href="#tables">¶</a>Tables</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td>engine</td>
+<td>engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td>ext</td>
+<td>extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>Right aligned columns</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Option</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">data</td>
+<td style="text-align:right">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:right">engine</td>
+<td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:right">ext</td>
+<td style="text-align:right">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="links"><a class="header-anchor" href="#links">¶</a>Links</h2>
+<p><a href="http://dev.nodeca.com" target="_blank" rel="external">link text</a></p>
+<p><a href="http://nodeca.github.io/pica/demo/" title="title text!" target="_blank" rel="external">link with title</a></p>
+<p>Autoconverted link <a href="https://github.com/nodeca/pica" target="_blank" rel="external">https://github.com/nodeca/pica</a> (enable linkify to see)</p>
+<h2 id="images"><a class="header-anchor" href="#images">¶</a>Images</h2>
+<p><img src="https://octodex.github.com/images/minion.png" alt="Minion"><br>
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" alt="Stormtroopocat" title="The Stormtroopocat"></p>
+<p>Like links, Images also have a footnote style syntax</p>
+<p><img src="https://octodex.github.com/images/dojocat.jpg" alt="Alt text" title="The Dojocat"></p>
+<p>With a reference later in the document defining the URL location:</p>
+<h2 id="plugins"><a class="header-anchor" href="#plugins">¶</a>Plugins</h2>
+<p>The killer feature of <code>markdown-it</code> is very effective support of<br>
+<a href="https://www.npmjs.org/browse/keyword/markdown-it-plugin" target="_blank" rel="external">syntax plugins</a>.</p>
+<h3 id="emojies"><a class="header-anchor" href="#emojies">¶</a><a href="https://github.com/markdown-it/markdown-it-emoji" target="_blank" rel="external">Emojies</a></h3>
+<blockquote>
+<p>Classic markup: 😉 :crush: 😢 :tear: 😆 😋</p>
+<p>Shortcuts (emoticons): 😃 😦 😎 😉</p>
+</blockquote>
+<p>see <a href="https://github.com/markdown-it/markdown-it-emoji#change-output" target="_blank" rel="external">how to change output</a> with twemoji.</p>
+<h3 id="subscript-superscript"><a class="header-anchor" href="#subscript-superscript">¶</a><a href="https://github.com/markdown-it/markdown-it-sub" target="_blank" rel="external">Subscript</a> / <a href="https://github.com/markdown-it/markdown-it-sup" target="_blank" rel="external">Superscript</a></h3>
+<ul>
+<li>19<sup>th</sup></li>
+<li>H<sub>2</sub>O</li>
+</ul>
+<h3 id="ins"><a class="header-anchor" href="#ins">¶</a><a href="https://github.com/markdown-it/markdown-it-ins" target="_blank" rel="external">&lt;ins&gt;</a></h3>
+<p><ins>Inserted text</ins></p>
+<h3 id="mark"><a class="header-anchor" href="#mark">¶</a><a href="https://github.com/markdown-it/markdown-it-mark" target="_blank" rel="external">&lt;mark&gt;</a></h3>
+<p>==Marked text==</p>
+<h3 id="footnotes"><a class="header-anchor" href="#footnotes">¶</a><a href="https://github.com/markdown-it/markdown-it-footnote" target="_blank" rel="external">Footnotes</a></h3>
+<p>Footnote 1 link<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<p>Footnote 2 link<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+<p>Inline footnote<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> definition.</p>
+<p>Duplicated footnote reference<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>.</p>
+<h3 id="definition-lists"><a class="header-anchor" href="#definition-lists">¶</a><a href="https://github.com/markdown-it/markdown-it-deflist" target="_blank" rel="external">Definition lists</a></h3>
+<p>Term 1</p>
+<p>:   Definition 1<br>
+with lazy continuation.</p>
+<p>Term 2 with <em>inline markup</em></p>
+<p>:   Definition 2</p>
+<pre><code>    { some code, part of Definition 2 }
+
+Third paragraph of definition 2.
+</code></pre>
+<p><em>Compact style:</em></p>
+<p>Term 1<br>
+~ Definition 1</p>
+<p>Term 2<br>
+~ Definition 2a<br>
+~ Definition 2b</p>
+<h3 id="abbreviations"><a class="header-anchor" href="#abbreviations">¶</a><a href="https://github.com/markdown-it/markdown-it-abbr" target="_blank" rel="external">Abbreviations</a></h3>
+<p>This is <abbr title="Hyper Text Markup Language">HTML</abbr> abbreviation example.</p>
+<p>It converts “<abbr title="Hyper Text Markup Language">HTML</abbr>”, but keep intact partial entries like “xxxHTMLyyy” and so on.</p>
+<h3 id="custom-containers"><a class="header-anchor" href="#custom-containers">¶</a><a href="https://github.com/markdown-it/markdown-it-container" target="_blank" rel="external">Custom containers</a></h3>
+<p>::: warning<br>
+<em>here be dragons</em><br>
+:::</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Footnote <strong>can have markup</strong></p>
+<p>and multiple paragraphs. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Footnote text. <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Text of inline footnote <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>谢赏~</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="bradelement Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/markdown-it/" rel="tag">#markdown-it</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/17/saltstack/" rel="next" title="saltstack">
+                <i class="fa fa-chevron-left"></i> saltstack
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/08/markdown-it/"
+           data-title="markdown-it" data-url="http://bradelement.github.io/2016/04/08/markdown-it/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="bradelement" />
+          <p class="site-author-name" itemprop="name">bradelement</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">h1 Heading 😎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#h2-heading"><span class="nav-number">1.1.</span> <span class="nav-text">¶h2 Heading</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#h3-heading"><span class="nav-number">1.1.1.</span> <span class="nav-text">¶h3 Heading</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#h4-heading"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">¶h4 Heading</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#h5-heading"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">¶h5 Heading</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#h6-heading"><span class="nav-number">1.1.1.1.1.1.</span> <span class="nav-text">¶h6 Heading</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#horizontal-rules"><span class="nav-number">1.2.</span> <span class="nav-text">¶Horizontal Rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typographic-replacements"><span class="nav-number">1.3.</span> <span class="nav-text">¶Typographic replacements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emphasis"><span class="nav-number">1.4.</span> <span class="nav-text">¶Emphasis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blockquotes"><span class="nav-number">1.5.</span> <span class="nav-text">¶Blockquotes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">1.6.</span> <span class="nav-text">¶Lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code"><span class="nav-number">1.7.</span> <span class="nav-text">¶Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tables"><span class="nav-number">1.8.</span> <span class="nav-text">¶Tables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#links"><span class="nav-number">1.9.</span> <span class="nav-text">¶Links</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#images"><span class="nav-number">1.10.</span> <span class="nav-text">¶Images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#plugins"><span class="nav-number">1.11.</span> <span class="nav-text">¶Plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#emojies"><span class="nav-number">1.11.1.</span> <span class="nav-text">¶Emojies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subscript-superscript"><span class="nav-number">1.11.2.</span> <span class="nav-text">¶Subscript / Superscript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ins"><span class="nav-number">1.11.3.</span> <span class="nav-text">¶<ins></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mark"><span class="nav-number">1.11.4.</span> <span class="nav-text">¶<mark></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#footnotes"><span class="nav-number">1.11.5.</span> <span class="nav-text">¶Footnotes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-lists"><span class="nav-number">1.11.6.</span> <span class="nav-text">¶Definition lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abbreviations"><span class="nav-number">1.11.7.</span> <span class="nav-text">¶Abbreviations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#custom-containers"><span class="nav-number">1.11.8.</span> <span class="nav-text">¶Custom containers</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bradelement</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"element"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
