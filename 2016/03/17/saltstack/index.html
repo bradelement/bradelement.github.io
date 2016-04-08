@@ -59,26 +59,29 @@
 
 <meta name="description" content="前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）
 salt \* test.ping
-salt -E &amp;apos;.*151&amp;apos; cmd.run &amp;quot;ls -al /etc&amp;quot;  //正则
+salt -E &apos;.*151&apos; cmd.run &amp;quot;ls -al /etc&amp;quot;  //正则
 salt -L vm10-65-128-217 disk.usage //列表
-salt -G &amp;apos;os:CentOS&amp;apos; grains.it">
+salt -G &apos;os:CentOS&apos; grains.items //grains
+salt -N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="saltstack">
 <meta property="og:url" content="http://bradelement.github.io/2016/03/17/saltstack/index.html">
 <meta property="og:site_name" content="element">
 <meta property="og:description" content="前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）
 salt \* test.ping
-salt -E &amp;apos;.*151&amp;apos; cmd.run &amp;quot;ls -al /etc&amp;quot;  //正则
+salt -E &apos;.*151&apos; cmd.run &amp;quot;ls -al /etc&amp;quot;  //正则
 salt -L vm10-65-128-217 disk.usage //列表
-salt -G &amp;apos;os:CentOS&amp;apos; grains.it">
+salt -G &apos;os:CentOS&apos; grains.items //grains
+salt -N">
 <meta property="og:updated_time" content="2016-03-17T03:38:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="saltstack">
 <meta name="twitter:description" content="前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）
 salt \* test.ping
-salt -E &amp;apos;.*151&amp;apos; cmd.run &amp;quot;ls -al /etc&amp;quot;  //正则
+salt -E &apos;.*151&apos; cmd.run &amp;quot;ls -al /etc&amp;quot;  //正则
 salt -L vm10-65-128-217 disk.usage //列表
-salt -G &amp;apos;os:CentOS&amp;apos; grains.it">
+salt -G &apos;os:CentOS&apos; grains.items //grains
+salt -N">
 
 
 
@@ -293,11 +296,11 @@ salt -G &amp;apos;os:CentOS&amp;apos; grains.it">
       
         <p>前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）</p>
 <pre><code>salt \* test.ping
-salt -E &apos;.*151&apos; cmd.run &quot;ls -al /etc&quot;  //正则
+salt -E '.*151' cmd.run &quot;ls -al /etc&quot;  //正则
 salt -L vm10-65-128-217 disk.usage //列表
-salt -G &apos;os:CentOS&apos; grains.items //grains
+salt -G 'os:CentOS' grains.items //grains
 salt -N nginx sys.doc grains //分组
-salt -I &apos;key:value&apos; sys.state_doc file //pillar
+salt -I 'key:value' sys.state_doc file //pillar
 
 salt \* sys.list_modules
 salt \* sys.list_functions cmd
@@ -309,6 +312,7 @@ salt \* sys.state_doc file.managed
 salt \* state.sls formula
 salt \* state.highstate test=True
 </code></pre>
+
       
     </div>
     

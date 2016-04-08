@@ -287,11 +287,11 @@
           
             <p>前一段时间简单熟悉了一下saltstack，记录一下（流水账- - 555）</p>
 <pre><code>salt \* test.ping
-salt -E &apos;.*151&apos; cmd.run &quot;ls -al /etc&quot;  //正则
+salt -E '.*151' cmd.run &quot;ls -al /etc&quot;  //正则
 salt -L vm10-65-128-217 disk.usage //列表
-salt -G &apos;os:CentOS&apos; grains.items //grains
+salt -G 'os:CentOS' grains.items //grains
 salt -N nginx sys.doc grains //分组
-salt -I &apos;key:value&apos; sys.state_doc file //pillar
+salt -I 'key:value' sys.state_doc file //pillar
 
 salt \* sys.list_modules
 salt \* sys.list_functions cmd
@@ -303,6 +303,7 @@ salt \* sys.state_doc file.managed
 salt \* state.sls formula
 salt \* state.highstate test=True
 </code></pre>
+
           
         
       
@@ -423,7 +424,9 @@ salt \* state.highstate test=True
             <p>线上要安装个rabbitmq，本机简单搭建并记录一下。</p>
 <pre><code>brew install rabbitmq
 /usr/local/sbin/rabbitmq-server #可以加到path里
-</code></pre><p>有教程，可参考具体代码<br><a href="https://www.rabbitmq.com/getstarted.html" target="_blank" rel="external">https://www.rabbitmq.com/getstarted.html</a></p>
+</code></pre>
+<p>有教程，可参考具体代码
+https://www.rabbitmq.com/getstarted.html</p>
 <pre><code>rabbitmqctl add_user username password
 rabbitmqctl set_user_tags username none/management/policymaker/monitoring/administrator
 rabbitmqctl list_users
@@ -431,10 +434,11 @@ rabbitmqctl list_users
 rabbitmqctl add_vhost hostname
 rabbitmqctl list_vhosts
 
-rabbitmqctl set_permissions  -p /hostname username &apos;.*&apos; &apos;.*&apos; &apos;.*&apos;
+rabbitmqctl set_permissions  -p /hostname username '.*' '.*' '.*'
 rabbitmqctl list_permissions -p /hostname
 rabbitmqctl list_user_permissions username
 </code></pre>
+
           
         
       
@@ -552,16 +556,23 @@ rabbitmqctl list_user_permissions username
       
         
           
-            <p>之前一直使用<a href="https://github.com/getlantern/lantern/" target="_blank" rel="external">lantern</a>，浏览器上网无压力，wget/git等仍然被和谐。<br>最近被介绍了shadowsocks和proxychains两大神器，简单记录下。</p>
-<p>shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)… 后续补上。<br>gui版直接输入服务器端用户名，密码，加密方式等即可。</p>
+            <p>之前一直使用<a href="https://github.com/getlantern/lantern/" target="_blank" rel="external">lantern</a>，浏览器上网无压力，wget/git等仍然被和谐。
+最近被介绍了shadowsocks和proxychains两大神器，简单记录下。</p>
+<p>shadowsocks目前先安装了gui版，命令行版暂时研究失败(ss-local/ss-server)... 后续补上。
+gui版直接输入服务器端用户名，密码，加密方式等即可。</p>
 <p>proxychains主要用来做console里的socks5代理。</p>
 <pre><code>brew install proxychains-ng
-</code></pre><p>理论上直接brew安装即可，修改配置文件，增加socks5 ip port配置即可。</p>
+</code></pre>
+<p>理论上直接brew安装即可，修改配置文件，增加socks5 ip port配置即可。</p>
 <pre><code>proxychains4 curl www.youtube.com
-</code></pre><p>可惜在我的小mac上不能成功。<br>查阅资料后，目前结论是mac自带的curl, git版本太低，不支持proxychains，brew install curl/git即可。<br>安装后curl不能覆盖原curl(求教各位大神如何覆盖系统自带的curl…) git亲测可行… 以后有新发现再行补充~</p>
+</code></pre>
+<p>可惜在我的小mac上不能成功。
+查阅资料后，目前结论是mac自带的curl, git版本太低，不支持proxychains，brew install curl/git即可。
+安装后curl不能覆盖原curl(求教各位大神如何覆盖系统自带的curl...) git亲测可行... 以后有新发现再行补充~</p>
 <pre><code>proxychains4 wget www.youtube.com
 proxychains4 git clone blabla
 </code></pre>
+
           
         
       
@@ -685,10 +696,12 @@ vagrant up
 
 vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
 vagrant package --不打包貌似会丢安装好的东西
-</code></pre><p>docker:</p>
+</code></pre>
+<p>docker:</p>
 <pre><code>wget -qO- https://get.docker.com/gpg | sudo apt-key add -
 wget -qO- https://get.docker.com/ | sh
 </code></pre>
+
           
         
       
@@ -810,9 +823,11 @@ wget -qO- https://get.docker.com/ | sh
 <pre><code>./configure \
   --with-cc-opt=&quot;-I /usr/local/opt/openssl/include/ -I /usr/local/opt/pcre/include/&quot; \
   --with-ld-opt=&quot;-L /usr/local/opt/openssl/lib/ -L /usr/local/opt/pcre/lib/&quot;
-</code></pre><p>brew有一个link的命令。</p>
+</code></pre>
+<p>brew有一个link的命令。</p>
 <pre><code>brew link blabla
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>/usr/local/opt</li>
 <li>/usr/local/Cellar</li>
 </ul>
@@ -934,14 +949,14 @@ wget -qO- https://get.docker.com/ | sh
       
         
           
-            <p>最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。</p>
+            <p>最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧...域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。</p>
 <p>新年一过自己又长了一岁，以前发生的许多事仍历历在目，但是仔细想想貌似也是几年前的事情了。每年感觉还是有一些成长，但更多的还是焦虑、迷茫。不停地在追，却发现有时找不到相对正确的方向。可能是每个人都会经历的一段吧，希望今后还是能把自己能控制的都做好，不留遗憾，应该就是很高的境界了吧。</p>
 <p>新一年开始希望能好好学习下技术，把基础打得更扎实一点，暂定每周至少完成一篇文章吧。学习的算法，工具，架构等等，实在不行计划把桥牌也重新捡起来，每周分析一篇BM2000的坐庄。。。也算是补充内容吧。（面试*家的时候三面leader要求教他一样东西，很自然地把桥牌教了一遍，对这段面试确实有很深的印象，最终还是略微可惜，向来缘浅..?）</p>
 <blockquote>
-<p>it’s easy, let it go~ 其实我只是想看看markdown里引用长啥样…</p>
+<p>it's easy, let it go~ 其实我只是想看看markdown里引用长啥样...</p>
 </blockquote>
-<p>顺对以下英文表示感谢，排名不分先后。 ezb, feelvoice, alva… 经历的每一件事都能学到不少东西~</p>
-<p>to be continued…</p>
+<p>顺对以下英文表示感谢，排名不分先后。 ezb, feelvoice, alva... 经历的每一件事都能学到不少东西~</p>
+<p>to be continued...</p>
 <p>element</p>
 
           
