@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vagrant,docker," />
+  <meta name="keywords" content="lua," />
 
 
 
@@ -57,40 +57,22 @@
 
 
 
-<meta name="description" content="vagrant:
-vagrant init ubuntu/trusty64
-vagrant up
-
-vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
-vagrant package --不打包貌似会丢安装好的东西
-
-docker:
-wget -qO- https://get.docker.com/gpg | sudo apt-key">
+<meta name="description" content="再次好久没有更新blog，主要是感觉没有什么记录的东西。最近通读了云风大神的blog，只能感叹人与人差距之大，有时确实难以企及，但仍希望能有一丝靠近。
+在工作中对lua有一些接触，开个坑mark一下，准备用一段时间通读一下lua的代码，大概20k行左右，对于一门语言来说确实足够精简。
+2016.05.18">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vagrant/docker安装小结">
-<meta property="og:url" content="http://element.gift/2016/02/03/vagrant/index.html">
+<meta property="og:title" content="开个坑学习一下lua">
+<meta property="og:url" content="http://element.gift/2016/05/18/lua-comment/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="vagrant:
-vagrant init ubuntu/trusty64
-vagrant up
-
-vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
-vagrant package --不打包貌似会丢安装好的东西
-
-docker:
-wget -qO- https://get.docker.com/gpg | sudo apt-key">
-<meta property="og:updated_time" content="2016-02-04T17:26:57.000Z">
+<meta property="og:description" content="再次好久没有更新blog，主要是感觉没有什么记录的东西。最近通读了云风大神的blog，只能感叹人与人差距之大，有时确实难以企及，但仍希望能有一丝靠近。
+在工作中对lua有一些接触，开个坑mark一下，准备用一段时间通读一下lua的代码，大概20k行左右，对于一门语言来说确实足够精简。
+2016.05.18">
+<meta property="og:updated_time" content="2016-05-18T09:47:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vagrant/docker安装小结">
-<meta name="twitter:description" content="vagrant:
-vagrant init ubuntu/trusty64
-vagrant up
-
-vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
-vagrant package --不打包貌似会丢安装好的东西
-
-docker:
-wget -qO- https://get.docker.com/gpg | sudo apt-key">
+<meta name="twitter:title" content="开个坑学习一下lua">
+<meta name="twitter:description" content="再次好久没有更新blog，主要是感觉没有什么记录的东西。最近通读了云风大神的blog，只能感叹人与人差距之大，有时确实难以企及，但仍希望能有一丝靠近。
+在工作中对lua有一些接触，开个坑mark一下，准备用一段时间通读一下lua的代码，大概20k行左右，对于一门语言来说确实足够精简。
+2016.05.18">
 
 
 
@@ -108,7 +90,7 @@ wget -qO- https://get.docker.com/gpg | sudo apt-key">
   };
 </script>
 
-  <title> vagrant/docker安装小结 | element </title>
+  <title> 开个坑学习一下lua | element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +220,7 @@ wget -qO- https://get.docker.com/gpg | sudo apt-key">
             
             
               
-                vagrant/docker安装小结
+                开个坑学习一下lua
               
             
           </h1>
@@ -250,8 +232,8 @@ wget -qO- https://get.docker.com/gpg | sudo apt-key">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-03T21:52:45+08:00" content="2016-02-03">
-              2016-02-03
+            <time itemprop="dateCreated" datetime="2016-05-18T17:39:21+08:00" content="2016-05-18">
+              2016-05-18
             </time>
           </span>
 
@@ -280,8 +262,8 @@ wget -qO- https://get.docker.com/gpg | sudo apt-key">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/03/vagrant/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/03/vagrant/" itemprop="commentsCount"></span>
+                <a href="/2016/05/18/lua-comment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/18/lua-comment/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -303,17 +285,9 @@ wget -qO- https://get.docker.com/gpg | sudo apt-key">
       
 
       
-        <p>vagrant:</p>
-<pre><code>vagrant init ubuntu/trusty64
-vagrant up
-
-vagrant ssh --貌似等价于ssh 127.0.0.1 -p 2222 用户名/密码都是vagrant
-vagrant package --不打包貌似会丢安装好的东西
-</code></pre>
-<p>docker:</p>
-<pre><code>wget -qO- https://get.docker.com/gpg | sudo apt-key add -
-wget -qO- https://get.docker.com/ | sh
-</code></pre>
+        <p>再次好久没有更新blog，主要是感觉没有什么记录的东西。最近通读了云风大神的blog，只能感叹人与人差距之大，有时确实难以企及，但仍希望能有一丝靠近。<br>
+在工作中对lua有一些接触，开个坑mark一下，准备用一段时间通读一下lua的代码，大概20k行左右，对于一门语言来说确实足够精简。</p>
+<p>2016.05.18</p>
 
       
     </div>
@@ -350,9 +324,7 @@ wget -qO- https://get.docker.com/ | sh
       
         <div class="post-tags">
           
-            <a href="/tags/vagrant/" rel="tag">#vagrant</a>
-          
-            <a href="/tags/docker/" rel="tag">#docker</a>
+            <a href="/tags/lua/" rel="tag">#lua</a>
           
         </div>
       
@@ -361,17 +333,13 @@ wget -qO- https://get.docker.com/ | sh
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/01/openresty/" rel="next" title="mac下编译openresty">
-                <i class="fa fa-chevron-left"></i> mac下编译openresty
+              <a href="/2016/04/08/markdown-it/" rel="next" title="markdown-it">
+                <i class="fa fa-chevron-left"></i> markdown-it
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/05/gfw/" rel="prev" title="翻越伟大的gfw">
-                翻越伟大的gfw <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -397,8 +365,8 @@ wget -qO- https://get.docker.com/ | sh
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/03/vagrant/"
-           data-title="vagrant/docker安装小结" data-url="http://element.gift/2016/02/03/vagrant/">
+      <div class="ds-thread" data-thread-key="2016/05/18/lua-comment/"
+           data-title="开个坑学习一下lua" data-url="http://element.gift/2016/05/18/lua-comment/">
       </div>
     
   </div>
