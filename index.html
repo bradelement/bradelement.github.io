@@ -302,11 +302,14 @@ php artisan make:model Task // app/Task.php
 </code></pre>
 <p>路由在app/Http/routes.php<br>
 模板在resources/views</p>
-<p>生成登录页，需要修改app/Http/Controllers/Auth/AuthController和app/Http/Middleware/RedirectIfAuthenticated.php</p>
+<p>生成登录页，还需要修改<br>
+app/Http/Controllers/Auth/AuthController<br>
+app/Http/Middleware/RedirectIfAuthenticated.php</p>
 <pre><code>php artisan make:auth
 </code></pre>
 <p>生成controller</p>
 <pre><code>php artisan make:controller TaskController
+php artisan make:controller PhotoController --resource
 </code></pre>
 <p>生成policy</p>
 <pre><code>php artisan make:policy TaskPolicy
