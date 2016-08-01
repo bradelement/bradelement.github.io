@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="es6," />
+  <meta name="keywords" content="plan," />
 
 
 
@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="短小精炼的代码，mark一下。
-1234567891011121314151617181920212223242526272829303132333435function compile(template)&amp;#123;    var evalExpr = /&amp;lt;%=(.+?)%&amp;gt;/g;    var expr = /&amp;lt;%([\s\S]+?)%&amp;gt;/g;    template">
+<meta name="description" content="突然就8月1号了，一年感觉已经进入结尾阶段了，感觉还是学到了不少东西，但有时候突然还是会很失落。
+无事来mark一下，年底前写一个app，把js好好学学。 -element">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20行的模板引擎">
-<meta property="og:url" content="http://element.gift/2016/06/30/es6/index.html">
+<meta property="og:title" content="随手记录">
+<meta property="og:url" content="http://element.gift/2016/08/01/plan/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="短小精炼的代码，mark一下。
-1234567891011121314151617181920212223242526272829303132333435function compile(template)&amp;#123;    var evalExpr = /&amp;lt;%=(.+?)%&amp;gt;/g;    var expr = /&amp;lt;%([\s\S]+?)%&amp;gt;/g;    template">
-<meta property="og:updated_time" content="2016-06-30T07:23:29.000Z">
+<meta property="og:description" content="突然就8月1号了，一年感觉已经进入结尾阶段了，感觉还是学到了不少东西，但有时候突然还是会很失落。
+无事来mark一下，年底前写一个app，把js好好学学。 -element">
+<meta property="og:updated_time" content="2016-08-01T10:05:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20行的模板引擎">
-<meta name="twitter:description" content="短小精炼的代码，mark一下。
-1234567891011121314151617181920212223242526272829303132333435function compile(template)&amp;#123;    var evalExpr = /&amp;lt;%=(.+?)%&amp;gt;/g;    var expr = /&amp;lt;%([\s\S]+?)%&amp;gt;/g;    template">
+<meta name="twitter:title" content="随手记录">
+<meta name="twitter:description" content="突然就8月1号了，一年感觉已经进入结尾阶段了，感觉还是学到了不少东西，但有时候突然还是会很失落。
+无事来mark一下，年底前写一个app，把js好好学学。 -element">
 
 
 
@@ -87,7 +87,7 @@
   };
 </script>
 
-  <title> 20行的模板引擎 | element </title>
+  <title> 随手记录 | element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -217,7 +217,7 @@
             
             
               
-                20行的模板引擎
+                随手记录
               
             
           </h1>
@@ -229,8 +229,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-30T14:52:38+08:00" content="2016-06-30">
-              2016-06-30
+            <time itemprop="dateCreated" datetime="2016-08-01T17:59:42+08:00" content="2016-08-01">
+              2016-08-01
             </time>
           </span>
 
@@ -259,8 +259,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/30/es6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/30/es6/" itemprop="commentsCount"></span>
+                <a href="/2016/08/01/plan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/01/plan/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,8 +282,8 @@
       
 
       
-        <p>短小精炼的代码，mark一下。</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">function compile(template)&#123;</div><div class="line">    var evalExpr = <span class="regexp">/&lt;%=(.+?)%&gt;/g</span>;</div><div class="line">    var expr = <span class="regexp">/&lt;%([\s\S]+?)%&gt;/g</span>;</div><div class="line"></div><div class="line">    template = template</div><div class="line">        .replace(evalExpr, <span class="string">'`); \n  echo( $1 ); \n  echo(`'</span>)</div><div class="line">        .replace(expr, <span class="string">'`); \n $1 \n  echo(`'</span>);</div><div class="line"></div><div class="line">    template = <span class="string">'echo(`'</span> + template + <span class="string">'`);'</span>;</div><div class="line"></div><div class="line">    var script =</div><div class="line">    `<span class="javascript">(<span class="function"><span class="keyword">function</span> <span class="title">parse</span>(<span class="params">data</span>)</span>&#123;</span></div><div class="line">        <span class="keyword">var</span> output = <span class="string">""</span>;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">echo</span>(<span class="params">html</span>)</span>&#123;</div><div class="line">            output += html;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        $&#123; template &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;)`;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> script;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var template = `<span class="javascript"></span></div><div class="line">    &lt;ul&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span>(<span class="attr">var</span> <span class="attr">i</span>=<span class="string">0;</span> <span class="attr">i</span> &lt; <span class="attr">data.supplies.length</span>; <span class="attr">i</span>++) &#123; %&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">data.supplies</span>[<span class="attr">i</span>] %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">`;</div><div class="line">var parse = eval(compile(template));</div><div class="line">var out = parse(&#123; supplies: [ <span class="string">"broom"</span>, <span class="string">"mop"</span>, <span class="string">"cleaner"</span> ] &#125;);</div><div class="line"><span class="built_in">console</span>.log(out);</div></pre></td></tr></table></figure>
+        <p>突然就8月1号了，一年感觉已经进入结尾阶段了，感觉还是学到了不少东西，但有时候突然还是会很失落。<br>
+无事来mark一下，年底前写一个app，把js好好学学。 -element</p>
 
       
     </div>
@@ -320,7 +320,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/es6/" rel="tag">#es6</a>
+            <a href="/tags/plan/" rel="tag">#plan</a>
           
         </div>
       
@@ -329,17 +329,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/01/laravel/" rel="next" title="学习下laravel">
-                <i class="fa fa-chevron-left"></i> 学习下laravel
+              <a href="/2016/06/30/es6/" rel="next" title="20行的模板引擎">
+                <i class="fa fa-chevron-left"></i> 20行的模板引擎
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/01/plan/" rel="prev" title="随手记录">
-                随手记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -365,8 +361,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/30/es6/"
-           data-title="20行的模板引擎" data-url="http://element.gift/2016/06/30/es6/">
+      <div class="ds-thread" data-thread-key="2016/08/01/plan/"
+           data-title="随手记录" data-url="http://element.gift/2016/08/01/plan/">
       </div>
     
   </div>

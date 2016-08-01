@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="es6," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -57,19 +57,12 @@
 
 
 
-<meta name="description" content="短小精炼的代码，mark一下。
-1234567891011121314151617181920212223242526272829303132333435function compile(template)&amp;#123;    var evalExpr = /&amp;lt;%=(.+?)%&amp;gt;/g;    var expr = /&amp;lt;%([\s\S]+?)%&amp;gt;/g;    template">
-<meta property="og:type" content="article">
-<meta property="og:title" content="20行的模板引擎">
-<meta property="og:url" content="http://element.gift/2016/06/30/es6/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="element">
+<meta property="og:url" content="http://element.gift/page/2/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description" content="短小精炼的代码，mark一下。
-1234567891011121314151617181920212223242526272829303132333435function compile(template)&amp;#123;    var evalExpr = /&amp;lt;%=(.+?)%&amp;gt;/g;    var expr = /&amp;lt;%([\s\S]+?)%&amp;gt;/g;    template">
-<meta property="og:updated_time" content="2016-06-30T07:23:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20行的模板引擎">
-<meta name="twitter:description" content="短小精炼的代码，mark一下。
-1234567891011121314151617181920212223242526272829303132333435function compile(template)&amp;#123;    var evalExpr = /&amp;lt;%=(.+?)%&amp;gt;/g;    var expr = /&amp;lt;%([\s\S]+?)%&amp;gt;/g;    template">
+<meta name="twitter:title" content="element">
 
 
 
@@ -87,7 +80,7 @@
   };
 </script>
 
-  <title> 20行的模板引擎 | element </title>
+  <title> element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -108,7 +101,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -195,9 +190,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
   
@@ -217,7 +212,10 @@
             
             
               
-                20行的模板引擎
+                
+                <a class="post-title-link" href="/2016/01/30/hello/" itemprop="url">
+                  element.gift上线~
+                </a>
               
             
           </h1>
@@ -229,8 +227,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-30T14:52:38+08:00" content="2016-06-30">
-              2016-06-30
+            <time itemprop="dateCreated" datetime="2016-01-30T23:17:00+08:00" content="2016-01-30">
+              2016-01-30
             </time>
           </span>
 
@@ -259,8 +257,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/30/es6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/30/es6/" itemprop="commentsCount"></span>
+                <a href="/2016/01/30/hello/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/30/hello/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,80 +280,52 @@
       
 
       
-        <p>短小精炼的代码，mark一下。</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">function compile(template)&#123;</div><div class="line">    var evalExpr = <span class="regexp">/&lt;%=(.+?)%&gt;/g</span>;</div><div class="line">    var expr = <span class="regexp">/&lt;%([\s\S]+?)%&gt;/g</span>;</div><div class="line"></div><div class="line">    template = template</div><div class="line">        .replace(evalExpr, <span class="string">'`); \n  echo( $1 ); \n  echo(`'</span>)</div><div class="line">        .replace(expr, <span class="string">'`); \n $1 \n  echo(`'</span>);</div><div class="line"></div><div class="line">    template = <span class="string">'echo(`'</span> + template + <span class="string">'`);'</span>;</div><div class="line"></div><div class="line">    var script =</div><div class="line">    `<span class="javascript">(<span class="function"><span class="keyword">function</span> <span class="title">parse</span>(<span class="params">data</span>)</span>&#123;</span></div><div class="line">        <span class="keyword">var</span> output = <span class="string">""</span>;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">echo</span>(<span class="params">html</span>)</span>&#123;</div><div class="line">            output += html;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        $&#123; template &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;)`;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> script;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var template = `<span class="javascript"></span></div><div class="line">    &lt;ul&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span>(<span class="attr">var</span> <span class="attr">i</span>=<span class="string">0;</span> <span class="attr">i</span> &lt; <span class="attr">data.supplies.length</span>; <span class="attr">i</span>++) &#123; %&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">data.supplies</span>[<span class="attr">i</span>] %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">`;</div><div class="line">var parse = eval(compile(template));</div><div class="line">var out = parse(&#123; supplies: [ <span class="string">"broom"</span>, <span class="string">"mop"</span>, <span class="string">"cleaner"</span> ] &#125;);</div><div class="line"><span class="built_in">console</span>.log(out);</div></pre></td></tr></table></figure>
+        
+          
+            <p>最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。</p>
+<p>新年一过自己又长了一岁，以前发生的许多事仍历历在目，但是仔细想想貌似也是几年前的事情了。每年感觉还是有一些成长，但更多的还是焦虑、迷茫。不停地在追，却发现有时找不到相对正确的方向。可能是每个人都会经历的一段吧，希望今后还是能把自己能控制的都做好，不留遗憾，应该就是很高的境界了吧。</p>
+<p>新一年开始希望能好好学习下技术，把基础打得更扎实一点，暂定每周至少完成一篇文章吧。学习的算法，工具，架构等等，实在不行计划把桥牌也重新捡起来，每周分析一篇BM2000的坐庄。。。也算是补充内容吧。（面试*家的时候三面leader要求教他一样东西，很自然地把桥牌教了一遍，对这段面试确实有很深的印象，最终还是略微可惜，向来缘浅…?）</p>
+<blockquote>
+<p>it’s easy, let it go~ 其实我只是想看看markdown里引用长啥样…</p>
+</blockquote>
+<p>顺对以下英文表示感谢，排名不分先后。 ezb, feelvoice, alva… 经历的每一件事都能学到不少东西~</p>
+<p>to be continued…</p>
+<p>element</p>
 
+          
+        
       
     </div>
     
     <div>
       
-        
-      
     </div>
 
     <div>
-      
-        
-<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
-  <div>谢赏~</div>
-  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
-    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-    
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="bradelement Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
-        <p>支付宝打赏</p>
-      </div>
-    
-  </div>
-</div>
-
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/es6/" rel="tag">#es6</a>
-          
-        </div>
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/01/laravel/" rel="next" title="学习下laravel">
-                <i class="fa fa-chevron-left"></i> 学习下laravel
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/01/plan/" rel="prev" title="随手记录">
-                随手记录 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -363,14 +333,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/06/30/es6/"
-           data-title="20行的模板引擎" data-url="http://element.gift/2016/06/30/es6/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -390,17 +352,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -452,17 +405,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -547,10 +489,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
-
-
 
   
 

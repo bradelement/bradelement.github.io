@@ -57,15 +57,12 @@
 
 
 
-<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="element">
 <meta property="og:url" content="http://element.gift/index.html">
 <meta property="og:site_name" content="element">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="element">
-<meta name="twitter:description">
 
 
 
@@ -216,6 +213,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/01/plan/" itemprop="url">
+                  随手记录
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-01T17:59:42+08:00" content="2016-08-01">
+              2016-08-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/default/" itemprop="url" rel="index">
+                    <span itemprop="name">default</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/01/plan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/01/plan/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>突然就8月1号了，一年感觉已经进入结尾阶段了，感觉还是学到了不少东西，但有时候突然还是会很失落。<br>
+无事来mark一下，年底前写一个app，把js好好学学。 -element</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/30/es6/" itemprop="url">
                   20行的模板引擎
                 </a>
@@ -286,7 +403,7 @@
         
           
             <p>短小精炼的代码，mark一下。</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">function compile(template)&#123;</span><br><span class="line">    <span class="keyword">var</span> evalExpr = /&lt;%=(.+?)%&gt;/<span class="keyword">g</span>;</span><br><span class="line">    <span class="keyword">var</span> expr = /&lt;%([\s\S]+?)%&gt;/<span class="keyword">g</span>;</span><br><span class="line"></span><br><span class="line">    template = template</span><br><span class="line">        .<span class="keyword">replace</span>(evalExpr, '`); \<span class="keyword">n</span>  echo( <span class="variable">$1</span> ); \<span class="keyword">n</span>  echo(`')</span><br><span class="line">        .<span class="keyword">replace</span>(expr, '`); \<span class="keyword">n</span> <span class="variable">$1</span> \<span class="keyword">n</span>  echo(`');</span><br><span class="line"></span><br><span class="line">    template = 'echo(`' + template + '`);';</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> script =</span><br><span class="line">    `(function <span class="keyword">parse</span>(data)&#123;</span><br><span class="line">        <span class="keyword">var</span> output = <span class="string">""</span>;</span><br><span class="line">        function echo(html)&#123;</span><br><span class="line">            output += html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $&#123; template &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;)`;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> script;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> template = `</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    &lt;% <span class="keyword">for</span>(<span class="keyword">var</span> i=0; i &lt; data.supplies.length; i++) &#123; %&gt;</span><br><span class="line">        &lt;<span class="keyword">li</span>&gt;&lt;%= data.supplies[i] %&gt;&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">`;</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">parse</span> = eval(compile(template));</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">out</span> = <span class="keyword">parse</span>(&#123; supplies: [ <span class="string">"broom"</span>, <span class="string">"mop"</span>, <span class="string">"cleaner"</span> ] &#125;);</span><br><span class="line">console.<span class="built_in">log</span>(<span class="keyword">out</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">function compile(template)&#123;</div><div class="line">    var evalExpr = <span class="regexp">/&lt;%=(.+?)%&gt;/g</span>;</div><div class="line">    var expr = <span class="regexp">/&lt;%([\s\S]+?)%&gt;/g</span>;</div><div class="line"></div><div class="line">    template = template</div><div class="line">        .replace(evalExpr, <span class="string">'`); \n  echo( $1 ); \n  echo(`'</span>)</div><div class="line">        .replace(expr, <span class="string">'`); \n $1 \n  echo(`'</span>);</div><div class="line"></div><div class="line">    template = <span class="string">'echo(`'</span> + template + <span class="string">'`);'</span>;</div><div class="line"></div><div class="line">    var script =</div><div class="line">    `<span class="javascript">(<span class="function"><span class="keyword">function</span> <span class="title">parse</span>(<span class="params">data</span>)</span>&#123;</span></div><div class="line">        <span class="keyword">var</span> output = <span class="string">""</span>;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">echo</span>(<span class="params">html</span>)</span>&#123;</div><div class="line">            output += html;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        $&#123; template &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;)`;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> script;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var template = `<span class="javascript"></span></div><div class="line">    &lt;ul&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span>(<span class="attr">var</span> <span class="attr">i</span>=<span class="string">0;</span> <span class="attr">i</span> &lt; <span class="attr">data.supplies.length</span>; <span class="attr">i</span>++) &#123; %&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">data.supplies</span>[<span class="attr">i</span>] %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">`;</div><div class="line">var parse = eval(compile(template));</div><div class="line">var out = parse(&#123; supplies: [ <span class="string">"broom"</span>, <span class="string">"mop"</span>, <span class="string">"cleaner"</span> ] &#125;);</div><div class="line"><span class="built_in">console</span>.log(out);</div></pre></td></tr></table></figure>
 
           
         
@@ -760,9 +877,9 @@ line 2 of code
 line 3 of code
 </code></pre>
 <p>Block code “fences”</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Sample</span></span> text here...</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">Sample</span></span> text here...</div></pre></td></tr></table></figure>
 <p>Syntax highlighting</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">bar</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> bar++;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo(<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params">bar</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> bar++;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(foo(<span class="number">5</span>));</div></pre></td></tr></table></figure>
 <h2>Tables</h2>
 <table>
 <thead>
@@ -1569,136 +1686,13 @@ wget -qO- https://get.docker.com/ | sh
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/30/hello/" itemprop="url">
-                  element.gift上线~
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-30T23:17:00+08:00" content="2016-01-30">
-              2016-01-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/default/" itemprop="url" rel="index">
-                    <span itemprop="name">default</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/30/hello/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/30/hello/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近貌似都属于游离的状态，节奏突然慢下来不少。回头看看过去的2015年，确实还是有一些和以前「不一样」的经历，好像自己也会有了一些感触想要整理一下，跟风开一个地方记录一些东西吧。本着节约成本的精神，先行使用github page吧…域名想了想还是买了一个，感觉全免费的东西自己可能还是坚持不了太久，有了一定付出可能才会更加珍惜（人之常情？！）；也算是给自己的一个小礼物吧。</p>
-<p>新年一过自己又长了一岁，以前发生的许多事仍历历在目，但是仔细想想貌似也是几年前的事情了。每年感觉还是有一些成长，但更多的还是焦虑、迷茫。不停地在追，却发现有时找不到相对正确的方向。可能是每个人都会经历的一段吧，希望今后还是能把自己能控制的都做好，不留遗憾，应该就是很高的境界了吧。</p>
-<p>新一年开始希望能好好学习下技术，把基础打得更扎实一点，暂定每周至少完成一篇文章吧。学习的算法，工具，架构等等，实在不行计划把桥牌也重新捡起来，每周分析一篇BM2000的坐庄。。。也算是补充内容吧。（面试*家的时候三面leader要求教他一样东西，很自然地把桥牌教了一遍，对这段面试确实有很深的印象，最终还是略微可惜，向来缘浅…?）</p>
-<blockquote>
-<p>it’s easy, let it go~ 其实我只是想看看markdown里引用长啥样…</p>
-</blockquote>
-<p>顺对以下英文表示感谢，排名不分先后。 ezb, feelvoice, alva… 经历的每一件事都能学到不少东西~</p>
-<p>to be continued…</p>
-<p>element</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1737,7 +1731,7 @@ wget -qO- https://get.docker.com/ | sh
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1754,7 +1748,7 @@ wget -qO- https://get.docker.com/ | sh
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
