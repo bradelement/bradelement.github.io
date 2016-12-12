@@ -63,7 +63,7 @@
 
 [http://music.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wangyimusic">
+<meta property="og:title" content="网易云音乐小爬虫">
 <meta property="og:url" content="http://element.gift/2016/12/12/wangyimusic/index.html">
 <meta property="og:site_name" content="element">
 <meta property="og:description" content="平时一直使用网易云音乐听歌，一大原因就是喜欢看下面每个人的评论，就像看bilibili的时候一定要看弹幕一样。最近闲来无事，准备做一个简单的爬虫抓取一些热门的歌曲和评论，权当练手和娱乐，顺简单记录一下。
@@ -71,9 +71,9 @@
 网页内容较为规整。手工指定了抓取顺序。
 
 [http://music.">
-<meta property="og:updated_time" content="2016-12-12T05:16:19.000Z">
+<meta property="og:updated_time" content="2016-12-12T05:23:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wangyimusic">
+<meta name="twitter:title" content="网易云音乐小爬虫">
 <meta name="twitter:description" content="平时一直使用网易云音乐听歌，一大原因就是喜欢看下面每个人的评论，就像看bilibili的时候一定要看弹幕一样。最近闲来无事，准备做一个简单的爬虫抓取一些热门的歌曲和评论，权当练手和娱乐，顺简单记录一下。
 简单分析，页面内容由js渲染，简单调研了一下phantomjs和selenium之类的，最终使用phantomjs进行抓取。
 网页内容较为规整。手工指定了抓取顺序。
@@ -96,7 +96,7 @@
   };
 </script>
 
-  <title> wangyimusic | element </title>
+  <title> 网易云音乐小爬虫 | element </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -226,7 +226,7 @@
             
             
               
-                wangyimusic
+                网易云音乐小爬虫
               
             
           </h1>
@@ -295,10 +295,10 @@
 <p>简单分析，页面内容由js渲染，简单调研了一下phantomjs和selenium之类的，最终使用phantomjs进行抓取。</p>
 <p>网页内容较为规整。手工指定了抓取顺序。</p>
 <ol>
-<li>[<a href="http://music.163.com/#/discover/playlist/?order=hot&amp;cat=%E5%85%A8%E9%83%A8&amp;limit=35&amp;offset=" target="_blank" rel="external">http://music.163.com/#/discover/playlist/?order=hot&amp;cat=全部&amp;limit=35&amp;offset=</a>][1] 获取分类为全部按热门排序的歌单（playlist）<br>
+<li>[<a href="http://music.163.com/#/discover/playlist/?order=hot&amp;cat=%E5%85%A8%E9%83%A8&amp;limit=35&amp;offset=" target="_blank" rel="external">http://music.163.com/#/discover/playlist/?order=hot&amp;cat=全部&amp;limit=35&amp;offset=</a>] 获取分类为全部按热门排序的歌单（playlist）<br>
 共抓取1467个歌单。</li>
-<li>[<a href="http://music.163.com/#/playlist?id=" target="_blank" rel="external">http://music.163.com/#/playlist?id=</a>][2] 获取歌单内的歌曲id. 共抓取110332首歌曲id，去重后为59919。本次抓取主要针对这些歌曲。</li>
-<li>[<a href="http://music.163.com/#/song?id=" target="_blank" rel="external">http://music.163.com/#/song?id=</a>][3] 获取歌曲歌名，歌手，歌词，总评论数，热门评论，点赞数，最新评论，解析后入库。</li>
+<li>[<a href="http://music.163.com/#/playlist?id=" target="_blank" rel="external">http://music.163.com/#/playlist?id=</a>] 获取歌单内的歌曲id. 共抓取110332首歌曲id，去重后为59919。本次抓取主要针对这些歌曲。</li>
+<li>[<a href="http://music.163.com/#/song?id=" target="_blank" rel="external">http://music.163.com/#/song?id=</a>] 获取歌曲歌名，歌手，歌词，总评论数，热门评论，点赞数，最新评论，解析后入库。</li>
 </ol>
 <p>js代码基本雷同，参考phantomjs官网即可。几个注意点是所有内容均在一个iframe里面，最初抓取的时候没有注意到，导致一度怀疑人生。。还是就是一定要设定一个超时时间，因为有时候不知道什么原因脚本就会hang住- -</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> page = <span class="built_in">require</span>(<span class="string">'webpage'</span>).create();</div><div class="line"><span class="keyword">var</span> system = <span class="built_in">require</span>(<span class="string">'system'</span>);</div><div class="line"></div><div class="line">page.viewportSize = &#123;width: <span class="number">1024</span>, height: <span class="number">800</span>&#125;</div><div class="line">page.settings.userAgent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36'</span>;</div><div class="line"><span class="comment">// page.onConsoleMessage = function(msg) &#123;</span></div><div class="line"><span class="comment">//     console.log(msg);</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> target = <span class="string">'http://music.163.com/#/song?id='</span>;</div><div class="line"><span class="keyword">var</span> uri = target + system.args[<span class="number">1</span>];</div><div class="line"></div><div class="line">page.open(uri, <span class="function"><span class="keyword">function</span>(<span class="params">status</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> ret = page.evaluate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> doc = <span class="built_in">document</span>.getElementById(<span class="string">'g_iframe'</span>).contentWindow.document;</div><div class="line">        <span class="keyword">var</span> comments = doc.querySelectorAll(<span class="string">'div.cntwrap'</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> ret = [];</div><div class="line">        <span class="keyword">var</span> c, t, cnt;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;comments.length; i++) &#123;</div><div class="line">            c = comments[i].querySelector(<span class="string">'div.cnt.f-brk'</span>).innerHTML;</div><div class="line">            t = comments[i].querySelector(<span class="string">'div.time.s-fc4'</span>).innerHTML;</div><div class="line">            cnt = comments[i].querySelector(<span class="string">'div.rp a'</span>).innerHTML;</div><div class="line">            ret.push([c, t, cnt]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;ret.length; i++) &#123;</div><div class="line">        ret[i].push(page.title);</div><div class="line">        ret[i].push(page.url);</div><div class="line">        <span class="built_in">console</span>.log(ret[i].join(<span class="string">'\t'</span>));</div><div class="line">    &#125;</div><div class="line">    phantom.exit();</div><div class="line">&#125;);</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    phantom.exit();</div><div class="line">&#125;, <span class="number">15000</span>);</div></pre></td></tr></table></figure>
@@ -451,7 +451,7 @@
 </tr>
 </tbody>
 </table>
-<p>顺吐槽一下markdown的table，确实不太好用…</p>
+<p>晴天113w的评论确实惊艳。杰伦影响的一代人基本都慢慢长大，成家立业了。感谢那个年代~</p>
 <p>to be continued.</p>
 
       
@@ -531,7 +531,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/12/12/wangyimusic/"
-           data-title="wangyimusic" data-url="http://element.gift/2016/12/12/wangyimusic/">
+           data-title="网易云音乐小爬虫" data-url="http://element.gift/2016/12/12/wangyimusic/">
       </div>
     
   </div>
