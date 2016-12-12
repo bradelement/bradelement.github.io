@@ -213,6 +213,286 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/12/wangyimusic/" itemprop="url">
+                  wangyimusic
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-12T10:33:24+08:00" content="2016-12-12">
+              2016-12-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/default/" itemprop="url" rel="index">
+                    <span itemprop="name">default</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/12/wangyimusic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/12/wangyimusic/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>平时一直使用网易云音乐听歌，一大原因就是喜欢看下面每个人的评论，就像看bilibili的时候一定要看弹幕一样。最近闲来无事，准备做一个简单的爬虫抓取一些热门的歌曲和评论，权当练手和娱乐，顺简单记录一下。</p>
+<p>简单分析，页面内容由js渲染，简单调研了一下phantomjs和selenium之类的，最终使用phantomjs进行抓取。</p>
+<p>网页内容较为规整。手工指定了抓取顺序。</p>
+<ol>
+<li>[<a href="http://music.163.com/#/discover/playlist/?order=hot&amp;cat=%E5%85%A8%E9%83%A8&amp;limit=35&amp;offset=" target="_blank" rel="external">http://music.163.com/#/discover/playlist/?order=hot&amp;cat=全部&amp;limit=35&amp;offset=</a>][1] 获取分类为全部按热门排序的歌单（playlist）<br>
+共抓取1467个歌单。</li>
+<li>[<a href="http://music.163.com/#/playlist?id=" target="_blank" rel="external">http://music.163.com/#/playlist?id=</a>][2] 获取歌单内的歌曲id. 共抓取110332首歌曲id，去重后为59919。本次抓取主要针对这些歌曲。</li>
+<li>[<a href="http://music.163.com/#/song?id=" target="_blank" rel="external">http://music.163.com/#/song?id=</a>][3] 获取歌曲歌名，歌手，歌词，总评论数，热门评论，点赞数，最新评论，解析后入库。</li>
+</ol>
+<p>js代码基本雷同，参考phantomjs官网即可。几个注意点是所有内容均在一个iframe里面，最初抓取的时候没有注意到，导致一度怀疑人生。。还是就是一定要设定一个超时时间，因为有时候不知道什么原因脚本就会hang住- -</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> page = <span class="built_in">require</span>(<span class="string">'webpage'</span>).create();</div><div class="line"><span class="keyword">var</span> system = <span class="built_in">require</span>(<span class="string">'system'</span>);</div><div class="line"></div><div class="line">page.viewportSize = &#123;width: <span class="number">1024</span>, height: <span class="number">800</span>&#125;</div><div class="line">page.settings.userAgent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36'</span>;</div><div class="line"><span class="comment">// page.onConsoleMessage = function(msg) &#123;</span></div><div class="line"><span class="comment">//     console.log(msg);</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> target = <span class="string">'http://music.163.com/#/song?id='</span>;</div><div class="line"><span class="keyword">var</span> uri = target + system.args[<span class="number">1</span>];</div><div class="line"></div><div class="line">page.open(uri, <span class="function"><span class="keyword">function</span>(<span class="params">status</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> ret = page.evaluate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> doc = <span class="built_in">document</span>.getElementById(<span class="string">'g_iframe'</span>).contentWindow.document;</div><div class="line">        <span class="keyword">var</span> comments = doc.querySelectorAll(<span class="string">'div.cntwrap'</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> ret = [];</div><div class="line">        <span class="keyword">var</span> c, t, cnt;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;comments.length; i++) &#123;</div><div class="line">            c = comments[i].querySelector(<span class="string">'div.cnt.f-brk'</span>).innerHTML;</div><div class="line">            t = comments[i].querySelector(<span class="string">'div.time.s-fc4'</span>).innerHTML;</div><div class="line">            cnt = comments[i].querySelector(<span class="string">'div.rp a'</span>).innerHTML;</div><div class="line">            ret.push([c, t, cnt]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;ret.length; i++) &#123;</div><div class="line">        ret[i].push(page.title);</div><div class="line">        ret[i].push(page.url);</div><div class="line">        <span class="built_in">console</span>.log(ret[i].join(<span class="string">'\t'</span>));</div><div class="line">    &#125;</div><div class="line">    phantom.exit();</div><div class="line">&#125;);</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    phantom.exit();</div><div class="line">&#125;, <span class="number">15000</span>);</div></pre></td></tr></table></figure>
+<p>通过一个shell脚本串联整个程序，没有多进程、重试等等。（因为我懒。。 其实是因为我的机器只有1核，多进程应该也没啥用。。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line"></div><div class="line">cat song.id | while read line</div><div class="line">do</div><div class="line">    phantomjs song.js $line;</div><div class="line">done</div></pre></td></tr></table></figure>
+<p>每个页面大致需要1至2秒加载并解析，经过两天左右的时间…  结果如下：</p>
+<p>评论数排行榜top10:</p>
+<table>
+<thead>
+<tr>
+<th>song_id</th>
+<th>歌名</th>
+<th>歌手</th>
+<th>总评论数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>186016</td>
+<td>晴天</td>
+<td>周杰伦</td>
+<td>1134091</td>
+</tr>
+<tr>
+<td>411214279</td>
+<td>雅俗共赏</td>
+<td>许嵩</td>
+<td>563371</td>
+</tr>
+<tr>
+<td>29947420</td>
+<td>Fade</td>
+<td>Alan Walker</td>
+<td>467583</td>
+</tr>
+<tr>
+<td>412902689</td>
+<td>初学者</td>
+<td>薛之谦</td>
+<td>173793</td>
+</tr>
+<tr>
+<td>418603077</td>
+<td>告白气球</td>
+<td>周杰伦</td>
+<td>165599</td>
+</tr>
+<tr>
+<td>32507038</td>
+<td>演员</td>
+<td>薛之谦</td>
+<td>150312</td>
+</tr>
+<tr>
+<td>417859631</td>
+<td>我好像在哪见过你（电影《精灵王座》主题曲）</td>
+<td>薛之谦</td>
+<td>122848</td>
+</tr>
+<tr>
+<td>36990266</td>
+<td>Faded</td>
+<td>Alan Walker</td>
+<td>119365</td>
+</tr>
+<tr>
+<td>412902950</td>
+<td>最佳歌手</td>
+<td>许嵩</td>
+<td>105618</td>
+</tr>
+<tr>
+<td>417833348</td>
+<td>超越无限（Infinity and Beyond）</td>
+<td>林俊杰</td>
+<td>103613</td>
+</tr>
+</tbody>
+</table>
+<p>评论点赞数排行榜top10:</p>
+<table>
+<thead>
+<tr>
+<th>song_id</th>
+<th>歌名</th>
+<th>评论</th>
+<th>点赞数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>28859948</td>
+<td>Turnin’</td>
+<td>听到副歌，眼泪流了下来。四年前爸爸被陷害入狱，家境一下从原来的富裕变到有时候吃顿饭都要纠结。真的，一切变都没了。我的规划，我的学业，我的理</td>
+<td>97692</td>
+</tr>
+<tr>
+<td>5051245</td>
+<td>Battle Without Honor or Humanity（野兽之战）</td>
+<td>该曲全长2分28秒</td>
+<td>96036</td>
+</tr>
+<tr>
+<td>29436904</td>
+<td>南山南</td>
+<td>“你在南方的艳阳里大雪纷飞，我在北方的寒夜里四季如春”，这首歌深刻地点明了北方有暖气南方无暖气所导致的人民矛盾。</td>
+<td>93852</td>
+</tr>
+<tr>
+<td>186016</td>
+<td>晴天</td>
+<td>老子要听一辈子周杰伦！！！</td>
+<td>90520</td>
+</tr>
+<tr>
+<td>28285910</td>
+<td>岁月神偷</td>
+<td>终于找到比白安更棒的声音和自然的唱腔 我要珍藏这个巨乳萝莉！太迷她的声音了 哦 我是女的 别赞 要脸</td>
+<td>88273</td>
+</tr>
+<tr>
+<td>29431066</td>
+<td>奇妙能力歌</td>
+<td>粒爷唱道：明白眼前的都是气泡。当时我在给手机贴膜，听得无比忧伤。</td>
+<td>87724</td>
+</tr>
+<tr>
+<td>4017240</td>
+<td>Intro: The Dawn（亡灵序曲）</td>
+<td>魔兽老了，我当爹了</td>
+<td>87442</td>
+</tr>
+<tr>
+<td>411214279</td>
+<td>雅俗共赏</td>
+<td>“满纸荒唐中窥见满脸沧桑 / 触到神经就要懂得鼓掌&quot;</td>
+<td>81763</td>
+</tr>
+<tr>
+<td>33211676</td>
+<td>Hello</td>
+<td>从此多了一个流派：电萌</td>
+<td>81623</td>
+</tr>
+<tr>
+<td>33162226</td>
+<td>悟空</td>
+<td>曾经我以为如来老儿是世上最烦的人，毕竟他压了我五百年。直到我遇见江流儿，他念了我一辈子。</td>
+<td>81622</td>
+</tr>
+</tbody>
+</table>
+<p>顺吐槽一下markdown的table，确实不太好用…</p>
+<p>to be continued.</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/01/plan/" itemprop="url">
                   随手记录
                 </a>
@@ -1556,136 +1836,6 @@ wget -qO- https://get.docker.com/ | sh
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/01/openresty/" itemprop="url">
-                  mac下编译openresty
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-01T13:46:31+08:00" content="2016-02-01">
-              2016-02-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/01/openresty/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/openresty/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>直接编译openresty报错，缺少openssl，简单记录下：</p>
-<pre><code>./configure \
-  --with-cc-opt=&quot;-I /usr/local/opt/openssl/include/ -I /usr/local/opt/pcre/include/&quot; \
-  --with-ld-opt=&quot;-L /usr/local/opt/openssl/lib/ -L /usr/local/opt/pcre/lib/&quot;
-</code></pre>
-<p>brew有一个link的命令。</p>
-<pre><code>brew link blabla
-</code></pre>
-<ul>
-<li>/usr/local/opt</li>
-<li>/usr/local/Cellar</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1731,7 +1881,7 @@ wget -qO- https://get.docker.com/ | sh
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1748,7 +1898,7 @@ wget -qO- https://get.docker.com/ | sh
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
