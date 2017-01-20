@@ -386,10 +386,10 @@
       
         
           
-            <pre><code>最近闲来无事，业余学习了一下css. 大致感觉是很多关键字的记忆，和后续经验的积累。看书的过程中一个疑问就是所有关键字没有一个大致的优先级或重要程度的标识之类。猜想css应该也符合日常28原则，20%的样式可以解决80%的需求。
-
-决定简单分析一下常见css框架的关键字频率，mark如下。
-</code></pre>
+            <p>最近闲来无事，业余学习了一下css. 大致感觉是很多关键字的记忆，和后续经验的积累。<br>
+看书的过程中一个疑问就是所有关键字没有一个大致的优先级或重要程度的标识之类。<br>
+猜想css应该也符合日常28原则，20%的样式可以解决80%的需求。<br>
+决定简单分析一下常见css框架的关键字频率，mark如下。</p>
 <p>Bootstrap:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#download bootstrap source code as bootstrap.zip</div><div class="line">unzip bootstrap.zip</div><div class="line">cd bootstrap/css</div><div class="line">cat bootstrap.css bootstrap-theme.css | egrep -o &apos;[a-zA-Z-]+&apos; | sort | uniq -c | sort -nrk1 | head</div><div class="line"></div><div class="line">整理top如下：</div><div class="line"> 293 before</div><div class="line"> 278 content</div><div class="line"> 215 background-color</div><div class="line"> 204 color</div><div class="line"> 169 background-image</div><div class="line"> 165 last-child</div><div class="line"> 134 display</div><div class="line"> 108 width</div><div class="line"> 107 border-color</div><div class="line"> 101 margin-left</div></pre></td></tr></table></figure>
 <p>Semantic UI:</p>
